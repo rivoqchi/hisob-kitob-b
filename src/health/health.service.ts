@@ -8,6 +8,14 @@ export class HealthService {
 
   constructor(@InjectConnection() private readonly connection: Connection) {}
 
+  /** Engil keep-alive (cron-job.org / UptimeRobot). Mongo tekshirmaydi. */
+  ping() {
+    return {
+      ok: true,
+      timestamp: new Date().toISOString(),
+    };
+  }
+
   check() {
     const mongoReady = this.connection.readyState === 1;
 

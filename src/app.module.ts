@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import configuration from './config/configuration';
 import { CreditsModule } from './credits/credits.module';
 import { ExpenseCategoriesModule } from './expense-categories/expense-categories.module';
+import { ExpensePlansModule } from './expense-plans/expense-plans.module';
 import { ExpensesModule } from './expenses/expenses.module';
 import { FamilyMembersModule } from './family-members/family-members.module';
 import { HealthModule } from './health/health.module';
@@ -33,6 +34,7 @@ import { RealtimeModule } from './realtime/realtime.module';
     FamilyMembersModule,
     ExpenseCategoriesModule,
     ExpensesModule,
+    ExpensePlansModule,
   ],
 })
 export class AppModule {}

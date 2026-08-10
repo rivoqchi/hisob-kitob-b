@@ -46,6 +46,19 @@ export class CreditsController {
     );
   }
 
+  @Patch(':id/close')
+  close(
+    @Req() req: AuthRequest,
+    @Param('id') id: string,
+    @Body() dto: UpdatePaidDto,
+  ) {
+    return this.creditsService.closeCredit(
+      req.user.userId,
+      id,
+      dto.paymentAmount,
+    );
+  }
+
   @Delete(':id')
   remove(@Req() req: AuthRequest, @Param('id') id: string) {
     return this.creditsService.remove(req.user.userId, id);
