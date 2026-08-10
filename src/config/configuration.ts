@@ -9,6 +9,7 @@ export default () => ({
   jwtExpiresIn: process.env.JWT_EXPIRES_IN ?? '365d',
   /** Telegram Gateway API token (gateway.telegram.org) — Verification Codes. */
   telegramGatewayToken: process.env.TELEGRAM_GATEWAY_TOKEN ?? '',
+  /** Bitta origin yoki vergul bilan ajratilgan ro‘yxat. */
   corsOrigin: process.env.CORS_ORIGIN ?? 'http://localhost:5173',
   /** Oilaviy real-time xona nomi (~10 kishi uchun bitta room yetadi). */
   familyRoom: process.env.FAMILY_ROOM ?? 'family',
