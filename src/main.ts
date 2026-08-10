@@ -24,9 +24,14 @@ async function bootstrap() {
   app.useGlobalFilters(new AllExceptionsFilter());
 
   const port = config.get<number>('port') ?? 3000;
-  await app.listen(port);
+  // Render va boshqa PaaS lar uchun 0.0.0.0 ga bind qilish shart
+  await app.listen(port, '0.0.0.0');
   // eslint-disable-next-line no-console
-  console.log(`Backend listening on http://localhost:${port}`);
+  console.log(`Backend listening on 0.0.0.0:${port}`);
 }
 
-void bootstrap();
+bootstrap().catch((err: unknown) => {
+  // eslint-disable-next-line no-console
+  console.error('Bootstrap failed:', err);
+  process.exit(1);
+});

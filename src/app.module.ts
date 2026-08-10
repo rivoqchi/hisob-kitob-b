@@ -23,6 +23,7 @@ import { RealtimeModule } from './realtime/realtime.module';
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
         uri: config.getOrThrow<string>('mongodbUri'),
+        serverSelectionTimeoutMS: 10_000,
       }),
     }),
     HealthModule,
